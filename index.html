@@ -1,245 +1,713 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Creative Arts Therapy for Growth | Greenwich, CT</title>
-  <meta name="description" content="Board-certified art psychotherapy. A safe space for anxiety, trauma, and growth. Telehealth in CT & NY." />
-  <meta name="theme-color" content="#f7f5f2" /> <link rel="stylesheet" href="styles.css" />
-  
+  <title>Creative Arts Therapy for Growth | Art Therapy in Greenwich, CT</title>
+  <meta name="description" content="Board-certified art psychotherapist offering art therapy, talk therapy, and DBT-informed support for anxiety, depression, trauma, grief, and life transitions. In person in Greenwich, CT and via telehealth across Connecticut and New York." />
+
+  <meta property="og:title" content="Creative Arts Therapy for Growth | Art Therapy in Greenwich, CT" />
+  <meta property="og:description" content="The Gift of Growth. Art therapy and client-centered support for anxiety, depression, trauma, grief, and life transitions. In person and via telehealth." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="creative-arts-therapy-hero.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 
+  <!-- LocalBusiness + Person (keep it simple and Google-friendly) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Creative Arts Therapy for Growth",
-    "telephone": "+1-201-419-5037",
-    "areaServed": ["Connecticut", "New York"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Greenwich",
-      "addressRegion": "CT",
-      "postalCode": "06830-6257",
-      "addressCountry": "US"
-    },
-    "medicalSpecialty": "Psychotherapy"
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Creative Arts Therapy for Growth",
+        "telephone": "+1-201-419-5037",
+        "areaServed": ["Connecticut", "New York"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "100 Melrose Ave",
+          "addressLocality": "Greenwich",
+          "addressRegion": "CT",
+          "postalCode": "06830-6257",
+          "addressCountry": "US"
+        },
+        "image": "https://example.com/creative-arts-therapy-hero.jpg",
+        "url": "https://example.com",
+        "paymentAccepted": "Online payments",
+        "priceRange": "$$",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Bettina Sementilli",
+        "jobTitle": "Art Psychotherapist",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Creative Arts Therapy for Growth"
+        },
+        "telephone": "+1-201-419-5037",
+        "image": "https://example.com/bettina-sementilli.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "100 Melrose Ave",
+          "addressLocality": "Greenwich",
+          "addressRegion": "CT",
+          "postalCode": "06830-6257",
+          "addressCountry": "US"
+        }
+      }
+    ]
   }
   </script>
 </head>
 
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="site-header" data-elevate>
+  <!-- Header -->
+  <header class="header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Creative Arts Therapy for Growth, home">
-        <span class="brand-text">
-          <span class="brand-name">Creative Arts Therapy</span>
-          <span class="brand-sub">for Growth</span>
+      <a class="logo" href="#top" aria-label="Home">
+        <span class="logo-mark" aria-hidden="true">
+          <!-- Simple “art + growth” mark (inline SVG, lightweight) -->
+          <svg viewBox="0 0 44 44" width="38" height="38" role="img" aria-label="Creative Arts Therapy for Growth logo">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="rgba(120, 179, 160, 1)"/>
+                <stop offset="1" stop-color="rgba(222, 176, 138, 1)"/>
+              </linearGradient>
+            </defs>
+            <circle cx="22" cy="22" r="18" fill="rgba(255,255,255,0.65)" stroke="rgba(15,23,42,0.14)"/>
+            <path d="M12 25c6-12 14-14 20-6" fill="none" stroke="url(#g1)" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M15 28c4 3 8 4 14 2" fill="none" stroke="rgba(120, 179, 160, 0.95)" stroke-width="2.6" stroke-linecap="round"/>
+            <circle cx="14" cy="18" r="2.4" fill="rgba(222, 176, 138, 0.9)"/>
+          </svg>
+        </span>
+
+        <span class="logo-stack">
+          <span class="logo-text">Creative Arts Therapy for Growth</span>
+          <span class="logo-sub">Connecticut and New York</span>
         </span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel">
           <span class="nav-toggle-lines" aria-hidden="true"></span>
           <span class="sr-only">Open menu</span>
         </button>
 
-        <div class="nav-menu" id="nav-menu">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#fees">Fees</a>
-          <a href="#location">Location</a>
-          
-          <div class="nav-ctas">
-            <a class="btn btn-ghost" href="#portal" data-portal>Client Portal</a>
-            <a class="btn btn-primary" href="#contact">Book Session</a>
+        <div class="nav-panel" id="navPanel">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#approach">Approach</a>
+          <a class="nav-link" href="#fees">Fees</a>
+          <a class="nav-link" href="#location">Location</a>
+          <a class="nav-link nav-cta" href="#contact">Request appointment</a>
+
+          <div class="nav-socials" aria-label="Quick links">
+            <a class="icon-link" href="#portal" aria-label="Client portal">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 2a7 7 0 0 1 7 7v2.2a4.8 4.8 0 0 1 3 4.4V20a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-4.4a4.8 4.8 0 0 1 3-4.4V9a7 7 0 0 1 7-7Zm0 2a5 5 0 0 0-5 5v1.6h10V9a5 5 0 0 0-5-5Zm0 9.2c-1.6 0-2.8 1.2-2.8 2.8S10.4 18.8 12 18.8s2.8-1.2 2.8-2.8S13.6 13.2 12 13.2Z"/>
+              </svg>
+            </a>
+            <a class="icon-link" href="tel:+12014195037" aria-label="Call 201-419-5037">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M6.6 2.6c.6-.6 1.5-.6 2.1 0l2.2 2.2c.5.5.6 1.3.2 1.9l-1.2 1.9c.9 1.7 2.3 3.1 4 4l1.9-1.2c.6-.4 1.4-.3 1.9.2l2.2 2.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.7.7-1.7 1-2.6.8-7.7-1.6-13.7-7.6-15.3-15.3-.2-.9.1-1.9.8-2.6L6.6 2.6Z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="container hero-grid">
-        
-        <div class="hero-content">
-          <span class="eyebrow">Art Psychotherapy • CT & NY</span>
-          <h1 class="hero-title">Heal, express, and grow in a safe space.</h1>
-          <p class="hero-lede">
-            Growth takes courage. Through art psychotherapy and a client-centered approach, we will gently challenge the patterns of the past to reshape your present.
-          </p>
-          
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Request Appointment</a>
-            <a class="btn btn-text" href="#about">Learn more &darr;</a>
-          </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <p class="kicker">Art therapy in Greenwich, CT and telehealth across Connecticut and New York</p>
 
-          <div class="hero-trust">
-            <span>✓ Telehealth Available</span>
-            <span>✓ Accepting New Clients</span>
-          </div>
+        <h1 class="hero-title">The Gift of Growth</h1>
+
+        <p class="hero-lead">
+          Growth takes courage. If the past still tugs at the present, you do not have to untangle it alone.
+          Through art psychotherapy and a client-centered, DBT-informed approach, I help you work with anxiety, depression,
+          anger, grief and loss, trauma, and life transitions in a way that feels safe and steady.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Request appointment</a>
+          <a class="btn btn-ghost" href="#portal">Client Portal</a>
         </div>
 
-        <div class="hero-visual">
-            <img src="bettina-portrait.webp" alt="Bettina Sementilli, Art Psychotherapist" class="hero-img">
+        <div class="trust-row" aria-label="Practice highlights">
+          <div class="trust-pill"><span class="trust-icon" aria-hidden="true">✓</span><span>Offers telehealth</span></div>
+          <div class="trust-pill"><span class="trust-icon" aria-hidden="true">✓</span><span>Online payments</span></div>
+          <div class="trust-pill"><span class="trust-icon" aria-hidden="true">✓</span><span>Accepting new clients</span></div>
         </div>
-
       </div>
-    </section>
 
-    <section class="section" id="about">
-      <div class="container two-col">
-        <div class="sticky-title">
-          <h2 class="h2">About the practice</h2>
-          <p class="muted">Bettina Sementilli, Board-Certified Art Psychotherapist</p>
+      <div class="hero-card reveal">
+        <div class="hero-image-wrap">
+          <img
+            class="hero-image"
+            src="creative-arts-therapy-hero.jpg"
+            alt="A calm studio space with art materials and warm light"
+            loading="lazy"
+          />
         </div>
 
-        <div class="content">
-          <p class="lead-text">
-            Sometimes our traumas are difficult to verbalize. Art therapy offers expression through images, allowing your story to emerge in a way that feels safer.
+        <div class="hero-card-body">
+          <h2 class="card-title">A session that meets you where you are</h2>
+          <p class="card-text">
+            You do not need the perfect words. We can begin with what you feel, what you notice, and what you want to shift.
+            Art therapy gives your experience a shape, so it can be understood without forcing it.
           </p>
+
+          <div class="hero-mini-cta">
+            <a class="btn btn-primary btn-full" href="#contact">Start your journey</a>
+            <a class="btn btn-ghost btn-full" href="tel:+12014195037">Call 201.419.5037</a>
+          </div>
+
+          <p class="small muted">
+            If you are unsure where to start, share a few lines and we will choose the right next step together.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-bg" aria-hidden="true"></div>
+  </section>
+
+  <!-- Quick contact ribbon -->
+  <section class="ribbon" aria-label="Quick contact">
+    <div class="container ribbon-inner reveal">
+      <div class="ribbon-left">
+        <span class="badge">Creative Arts Therapy for Growth</span>
+        <span class="muted">Connecticut and New York</span>
+      </div>
+
+      <div class="ribbon-right">
+        <a class="toplink" href="tel:+12014195037">Call: 201.419.5037</a>
+        <span class="dot">•</span>
+        <a class="toplink" href="#contact">Request appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container split">
+      <div class="reveal">
+        <div class="bio-head" aria-label="Therapist profile">
+          <div class="bio-avatar">
+            <img src="bettina-sementilli.png" alt="Portrait of Bettina Sementilli" loading="lazy" />
+          </div>
+          <div>
+            <p class="bio-kicker muted">Bettina Sementilli</p>
+            <p class="bio-sub">Art Psychotherapist</p>
+          </div>
+        </div>
+
+        <h2 class="section-title">Patience, Commitment, Growth</h2>
+        <p class="section-lead">
+          As a board-certified art psychotherapist, the most rewarding part of my work is the relief clients feel
+          when progress becomes real. Some experiences are hard to say out loud. Sometimes we do not even know why
+          we react the way we do. Art therapy offers a safe form of expression through images, helping you tell your story
+          without pressure.
+        </p>
+
+        <div class="bullets">
+          <div class="bullet">
+            <div class="bullet-dot" aria-hidden="true"></div>
+            <p><strong>Art therapy plus talk therapy.</strong> We use both image and language, so you can process experiences in the way that fits you.</p>
+          </div>
+          <div class="bullet">
+            <div class="bullet-dot" aria-hidden="true"></div>
+            <p><strong>DBT-informed skills.</strong> Practical tools for emotion regulation, distress tolerance, and steadier relationships.</p>
+          </div>
+          <div class="bullet">
+            <div class="bullet-dot" aria-hidden="true"></div>
+            <p><strong>A grounded, respectful pace.</strong> The work can be challenging, but you stay in control of the speed and depth.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="info-card reveal" aria-label="At a glance">
+        <h3 class="info-title">At a glance</h3>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <p class="info-k">Service area</p>
+            <p class="info-v">Connecticut and New York</p>
+          </div>
+          <div class="info-item">
+            <p class="info-k">Session types</p>
+            <p class="info-v">In person and telehealth</p>
+          </div>
+          <div class="info-item">
+            <p class="info-k">Payments</p>
+            <p class="info-v">Online payments accepted</p>
+          </div>
+          <div class="info-item">
+            <p class="info-k">Phone</p>
+            <p class="info-v">201.419.5037</p>
+          </div>
+        </div>
+
+        <a class="btn btn-primary btn-full" href="#contact">Request appointment</a>
+        <p class="small muted center" id="portal">Client Portal is for existing clients. Not for emergencies.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">Services</h2>
+        <p class="section-lead">
+          Support tailored to what is happening now, and to the patterns beneath it. If you are not sure what fits, we clarify it together.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal">
+          <h3 class="card-h">Anxiety</h3>
+          <p class="card-p">Calm the body, soften racing thoughts, and feel more grounded in daily life.</p>
+          <p class="card-mini muted">Art therapy and DBT-informed tools</p>
+        </article>
+
+        <article class="card reveal">
+          <h3 class="card-h">Depression</h3>
+          <p class="card-p">Reconnect with energy and meaning through small, steady steps that build momentum.</p>
+          <p class="card-mini muted">Client-centered and supportive</p>
+        </article>
+
+        <article class="card reveal">
+          <h3 class="card-h">Trauma</h3>
+          <p class="card-p">Work with difficult memories safely, with a mind-body approach that respects your pace.</p>
+          <p class="card-mini muted">Trauma-focused care</p>
+        </article>
+
+        <article class="card reveal">
+          <h3 class="card-h">Grief and loss</h3>
+          <p class="card-p">Make space for what you have lost and what you still carry, without forcing closure.</p>
+          <p class="card-mini muted">Gentle structure, real support</p>
+        </article>
+
+        <article class="card reveal">
+          <h3 class="card-h">Life transitions</h3>
+          <p class="card-p">Support for change, uncertainty, identity shifts, and the stress of new chapters.</p>
+          <p class="card-mini muted">Clarity and steadiness</p>
+        </article>
+
+        <article class="card reveal">
+          <h3 class="card-h">Relationships</h3>
+          <p class="card-p">Understand patterns, improve communication, and build healthier boundaries.</p>
+          <p class="card-mini muted">Person-centered psychotherapy</p>
+        </article>
+
+        <article class="card reveal">
+          <h3 class="card-h">Anger</h3>
+          <p class="card-p">Learn what your anger protects, and how to respond without regret.</p>
+          <p class="card-mini muted">Emotion regulation skills</p>
+        </article>
+
+        <article class="card reveal">
+          <h3 class="card-h">Behavioral issues</h3>
+          <p class="card-p">Explore triggers, coping styles, and practical changes that feel sustainable.</p>
+          <p class="card-mini muted">Strength-based support</p>
+        </article>
+      </div>
+
+      <div class="section-cta reveal">
+        <div class="cta-card">
+          <h3 class="cta-h">Not sure where to start?</h3>
+          <p class="cta-p">
+            Send a short note about what you are dealing with. I will respond with the next available options and a clear recommendation.
+          </p>
+          <div class="cta-mini">
+            <div class="cta-mini-row"><span class="cta-dot" aria-hidden="true"></span><span>Confidential and respectful</span></div>
+            <div class="cta-mini-row"><span class="cta-dot" aria-hidden="true"></span><span>Clear next steps</span></div>
+            <div class="cta-mini-row"><span class="cta-dot" aria-hidden="true"></span><span>Telehealth available</span></div>
+          </div>
+          <a class="btn btn-primary btn-full" href="#contact">Request appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section class="section" id="approach">
+    <div class="container split">
+      <div class="reveal">
+        <h2 class="section-title">Approaches</h2>
+        <p class="section-lead">
+          We combine expressive and evidence-informed work so your progress is felt in the body, the mind, and your relationships.
+        </p>
+
+        <div class="pill-grid reveal" aria-label="Approaches list">
+          <span class="pill">Art Therapy</span>
+          <span class="pill">Dialectical Behavior Therapy (DBT)</span>
+          <span class="pill">Emotional Freedom Technique (EFT)</span>
+          <span class="pill">Person-Centered</span>
+          <span class="pill">Psychotherapy</span>
+          <span class="pill">Positive Psychology</span>
+          <span class="pill">Breathwork</span>
+          <span class="pill">Humanistic Therapy</span>
+          <span class="pill">Strength-Based</span>
+          <span class="pill">Trauma Focused</span>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-n">1</div>
+            <div class="step-b">
+              <h3 class="step-h">Make sense of what is happening</h3>
+              <p class="step-p">We identify patterns, triggers, and the emotional themes that keep repeating.</p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-n">2</div>
+            <div class="step-b">
+              <h3 class="step-h">Build practical stability</h3>
+              <p class="step-p">Skills that reduce overwhelm and help you respond with more choice.</p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <div class="step-n">3</div>
+            <div class="step-b">
+              <h3 class="step-h">Translate insight into change</h3>
+              <p class="step-p">We turn clarity into everyday shifts that feel real, not forced.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-card reveal">
+        <p class="quote">
+          “Sometimes the safest way to tell the truth is through an image first. From there, the words get easier.”
+        </p>
+        <div class="quote-meta">
+          <div class="avatar">
+            <img src="bettina-sementilli.png" alt="Portrait of Bettina Sementilli" loading="lazy" />
+          </div>
+          <div>
+            <p class="quote-name">Bettina Sementilli</p>
+            <p class="small muted">Art Psychotherapist</p>
+          </div>
+        </div>
+
+        <div class="mini-trust">
+          <div class="mini-trust-item"><span class="mini-icon" aria-hidden="true">⟡</span><span>Client-centered, calm, and direct</span></div>
+          <div class="mini-trust-item"><span class="mini-icon" aria-hidden="true">⟡</span><span>Tools you can use between sessions</span></div>
+          <div class="mini-trust-item"><span class="mini-icon" aria-hidden="true">⟡</span><span>Telehealth available</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fees -->
+  <section class="section section-alt" id="fees">
+    <div class="container split">
+      <div class="reveal">
+        <h2 class="section-title">Fees and insurance</h2>
+        <p class="section-lead">
+          Clear pricing and simple logistics, so you can focus on the work.
+        </p>
+
+        <div class="pricing">
+          <div class="pricebox reveal">
+            <h3 class="price-h">Session fee</h3>
+            <p class="price-v">$200</p>
+            <p class="price-p">Fee description: $200. Telehealth and in-person options available.</p>
+          </div>
+
+          <div class="pricebox reveal">
+            <h3 class="price-h">Insurance accepted</h3>
+            <p class="price-v">Cigna</p>
+            <p class="price-p">If you have questions about coverage, include it in your message and I will guide you.</p>
+          </div>
+
+          <div class="pricebox reveal">
+            <h3 class="price-h">Payments</h3>
+            <p class="price-v">Online</p>
+            <p class="price-p">Online payments accepted for convenience and privacy.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-card reveal">
+        <h3 class="cta-h">Ready to begin?</h3>
+        <p class="cta-p">
+          Share a few lines about what you want help with. I will reply with next availability and the best option for your needs.
+        </p>
+
+        <div class="cta-mini">
+          <div class="cta-mini-row"><span class="cta-dot" aria-hidden="true"></span><span>Accepting new clients</span></div>
+          <div class="cta-mini-row"><span class="cta-dot" aria-hidden="true"></span><span>Telehealth for CT and NY</span></div>
+          <div class="cta-mini-row"><span class="cta-dot" aria-hidden="true"></span><span>Online payments available</span></div>
+        </div>
+
+        <a class="btn btn-primary btn-full" href="#contact">Request appointment</a>
+        <a class="btn btn-ghost btn-full" href="tel:+12014195037">Call 201.419.5037</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">FAQ</h2>
+        <p class="section-lead">Practical answers before you reach out.</p>
+      </div>
+
+      <div class="accordion reveal" data-accordion>
+        <button class="acc-item" aria-expanded="false">
+          <span class="acc-q">Do I need to be good at art for art therapy?</span>
+          <span class="acc-ic" aria-hidden="true"></span>
+        </button>
+        <div class="acc-a" hidden>
           <p>
-            Combining art therapy, verbal psychotherapy, and DBT, we incorporate a mind-body approach to help you build practical skills while addressing deeper roots.
+            No. This is not about talent. It is about expression. The image is simply a safe way to show what you feel,
+            especially when words are difficult.
           </p>
-          
-          <div class="stats-grid">
-             <div class="stat-item">
-               <span class="stat-num">15+</span>
-               <span class="stat-lbl">Years Experience</span>
-             </div>
-             <div class="stat-item">
-               <span class="stat-num">DBT</span>
-               <span class="stat-lbl">Informed Approach</span>
-             </div>
+        </div>
+
+        <button class="acc-item" aria-expanded="false">
+          <span class="acc-q">Do you offer telehealth sessions?</span>
+          <span class="acc-ic" aria-hidden="true"></span>
+        </button>
+        <div class="acc-a" hidden>
+          <p>
+            Yes. Telehealth is available across Connecticut and New York through a secure video platform.
+          </p>
+        </div>
+
+        <button class="acc-item" aria-expanded="false">
+          <span class="acc-q">What can I expect in the first session?</span>
+          <span class="acc-ic" aria-hidden="true"></span>
+        </button>
+        <div class="acc-a" hidden>
+          <p>
+            We start by understanding what is happening, what you have tried, and what you want to change.
+            You leave with clear next steps and a plan that feels manageable.
+          </p>
+        </div>
+
+        <button class="acc-item" aria-expanded="false">
+          <span class="acc-q">Do you accept insurance?</span>
+          <span class="acc-ic" aria-hidden="true"></span>
+        </button>
+        <div class="acc-a" hidden>
+          <p>
+            Cigna is accepted. If you are unsure about coverage, include your question in your message and I will guide you.
+          </p>
+        </div>
+
+        <button class="acc-item" aria-expanded="false">
+          <span class="acc-q">What is the session fee?</span>
+          <span class="acc-ic" aria-hidden="true"></span>
+        </button>
+        <div class="acc-a" hidden>
+          <p>
+            The fee is $200 per session. Online payments are available.
+          </p>
+        </div>
+
+        <button class="acc-item" aria-expanded="false">
+          <span class="acc-q">Is the client portal for emergencies?</span>
+          <span class="acc-ic" aria-hidden="true"></span>
+        </button>
+        <div class="acc-a" hidden>
+          <p>
+            No. The client portal is not to be used for emergency situations.
+            If you or others are in immediate danger or experiencing a medical emergency, call 911 immediately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="section section-alt" id="location">
+    <div class="container split">
+      <div class="reveal">
+        <h2 class="section-title">Location</h2>
+        <p class="section-lead">
+          In person sessions in Greenwich, Connecticut, plus telehealth for clients in Connecticut and New York.
+        </p>
+
+        <div class="contact-block">
+          <div class="contact-line reveal">
+            <span class="cicon" aria-hidden="true">⌁</span>
+            <div>
+              <p class="ck">Main location</p>
+              <p class="cv">100 Melrose Ave, Greenwich, CT 06830-6257</p>
+            </div>
+          </div>
+
+          <div class="contact-line reveal">
+            <span class="cicon" aria-hidden="true">☎</span>
+            <div>
+              <p class="ck">Phone</p>
+              <a class="cv" href="tel:+12014195037">201.419.5037</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section bg-soft" id="services">
-      <div class="container">
-        <div class="section-head center">
-          <h2 class="h2">How we can work together</h2>
-          <p class="muted">Support for daily life and deep-rooted patterns.</p>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <h3 class="h3">Anxiety & Depression</h3>
-            <p>Reduce overwhelm and reconnect with your motivation and meaning.</p>
-          </article>
-
-          <article class="card">
-            <h3 class="h3">Trauma Processing</h3>
-            <p>Careful pacing and tools that support nervous system regulation.</p>
-          </article>
-
-          <article class="card">
-            <h3 class="h3">Life Transitions</h3>
-            <p>Navigate change with clarity, boundaries, and grounded decisions.</p>
-          </article>
-
-          <article class="card highlight-card">
-            <h3 class="h3">Art Therapy</h3>
-            <p>Using creativity to unlock emotions when words aren't enough.</p>
-          </article>
+        <div class="map reveal">
+          <iframe
+            title="Map to 100 Melrose Ave, Greenwich, CT"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=100%20Melrose%20Ave%20Greenwich%20CT%2006830&output=embed">
+          </iframe>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="fees">
-      <div class="container split">
-        <div class="panel">
-          <h3 class="h3">Insurance</h3>
-          <p class="muted">We currently accept:</p>
-          <div class="badge-row">
-            <span class="badge">Cigna</span>
+      <div class="cta-card reveal">
+        <h3 class="cta-h">Get directions and next steps</h3>
+        <p class="cta-p">
+          If you prefer to ask a quick question first, that is completely fine. Start with what feels easiest.
+        </p>
+        <a class="btn btn-primary btn-full" href="#contact">Request appointment</a>
+        <a class="btn btn-ghost btn-full" href="#portal">Client Portal</a>
+        <p class="small muted center">For emergencies call 911.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container split">
+      <div class="reveal">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-lead">
+          Share a few lines about what you would like support with. I will respond with availability and next steps.
+        </p>
+
+        <div class="contact-block">
+          <div class="contact-line reveal">
+            <span class="cicon" aria-hidden="true">☎</span>
+            <div>
+              <p class="ck">Phone</p>
+              <a class="cv" href="tel:+12014195037">201.419.5037</a>
+            </div>
           </div>
-          <p class="small mt-2">For other providers, we can provide a superbill for out-of-network reimbursement.</p>
+
+          <div class="contact-line reveal">
+            <span class="cicon" aria-hidden="true">⌁</span>
+            <div>
+              <p class="ck">Service area</p>
+              <p class="cv">Connecticut and New York</p>
+            </div>
+          </div>
+
+          <div class="contact-line reveal">
+            <span class="cicon" aria-hidden="true">✓</span>
+            <div>
+              <p class="ck">Highlights</p>
+              <p class="cv">Telehealth, online payments, accepting new clients</p>
+            </div>
+          </div>
         </div>
 
-        <div class="panel panel-accent">
-          <h3 class="h3">Session Fee</h3>
-          <p class="price">$200 <span class="per-session">/ 50 mins</span></p>
-          <p class="small">Online payments via secure portal.</p>
-        </div>
+        <p class="small muted emergency-note">
+          The client portal is not to be used for emergency situations. If you or others are in immediate danger or experiencing a medical emergency, call 911 immediately.
+        </p>
       </div>
-    </section>
 
-    <section class="section" id="location">
-      <div class="container">
-         <div class="map-card">
-            <div class="map-info">
-               <h2 class="h2">Location</h2>
-               <p>100 Melrose Ave, Greenwich, CT</p>
-               <p class="muted">Telehealth available across CT & NY.</p>
-               <a href="https://maps.google.com" target="_blank" class="btn btn-ghost small-btn">Get Directions</a>
-            </div>
-            <div class="map-visual">
-               <div class="map-placeholder">Map View</div>
-            </div>
-         </div>
-      </div>
-    </section>
+      <form class="form reveal" id="contactForm" novalidate>
+        <h3 class="form-title">Request an appointment</h3>
 
-    <section class="section" id="contact">
-      <div class="container contact-wrap">
-        <div class="section-head center">
-          <h2 class="h2">Begin your journey</h2>
-          <p class="muted">Fill out the form below or call <strong>201.419.5037</strong></p>
-        </div>
+        <label class="field">
+          <span class="label">Full name</span>
+          <input class="input" type="text" name="name" autocomplete="name" required />
+          <span class="error" data-error-for="name"></span>
+        </label>
 
-        <form class="form narrow-form" action="#" method="post">
-            <div class="field-group">
-              <div class="field">
-                <label for="name">Name</label>
-                <input id="name" name="name" required placeholder="Full Name" />
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required placeholder="email@address.com" />
-              </div>
-            </div>
+        <label class="field">
+          <span class="label">Email</span>
+          <input class="input" type="email" name="email" autocomplete="email" required />
+          <span class="error" data-error-for="email"></span>
+        </label>
 
-            <div class="field">
-              <label for="note">How can I help?</label>
-              <textarea id="note" name="note" rows="4" placeholder="Briefly describe what brings you here..."></textarea>
-            </div>
+        <label class="field">
+          <span class="label">What would you like support with?</span>
+          <textarea class="input textarea" name="message" rows="5" required></textarea>
+          <span class="error" data-error-for="message"></span>
+        </label>
 
-            <button class="btn btn-primary btn-full" type="submit">Send Request</button>
-            <p class="disclaimer">Not for emergencies. Call 911 if in danger.</p>
-        </form>
-      </div>
-    </section>
-  </main>
+        <button class="btn btn-primary btn-full" type="submit">Send</button>
+        <p class="small muted center">If you prefer, you can also call 201.419.5037.</p>
+      </form>
+    </div>
+  </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-name">Creative Arts Therapy for Growth</p>
-        <p class="footer-copy">© 2026 Bettina Sementilli. All rights reserved.</p>
+      <div class="foot-left">
+        <p class="foot-brand">Creative Arts Therapy for Growth</p>
+        <p class="small muted">Connecticut and New York. In person in Greenwich, CT and via telehealth.</p>
+
+        <div class="socials" aria-label="Quick actions">
+          <a class="foot-link social-pill icon-link" href="#portal" aria-label="Client portal">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 2a7 7 0 0 1 7 7v2.2a4.8 4.8 0 0 1 3 4.4V20a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-4.4a4.8 4.8 0 0 1 3-4.4V9a7 7 0 0 1 7-7Zm0 2a5 5 0 0 0-5 5v1.6h10V9a5 5 0 0 0-5-5Z"/>
+            </svg>
+          </a>
+
+          <a class="foot-link social-pill icon-link" href="tel:+12014195037" aria-label="Call">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6.6 2.6c.6-.6 1.5-.6 2.1 0l2.2 2.2c.5.5.6 1.3.2 1.9l-1.2 1.9c.9 1.7 2.3 3.1 4 4l1.9-1.2c.6-.4 1.4-.3 1.9.2l2.2 2.2c.6.6.6 1.5 0 2.1l-1.4 1.4c-.7.7-1.7 1-2.6.8-7.7-1.6-13.7-7.6-15.3-15.3-.2-.9.1-1.9.8-2.6L6.6 2.6Z"/>
+            </svg>
+          </a>
+
+          <a class="foot-link social-pill icon-link" href="#contact" aria-label="Request appointment">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7Zm12 8H5v10h14V10ZM7 12h6v2H7v-2Zm0 4h10v2H7v-2Z"/>
+            </svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="#top">Back to top</a>
+
+      <div class="foot-links">
+        <a class="foot-link" href="#about">About</a>
+        <a class="foot-link" href="#services">Services</a>
+        <a class="foot-link" href="#fees">Fees</a>
+        <a class="foot-link" href="#location">Location</a>
+      </div>
+
+      <div class="foot-legal">
+        <p class="small muted">© <span id="year"></span> Creative Arts Therapy for Growth. All rights reserved.</p>
+        <p class="small muted">
+          The client portal is not to be used for emergency situations. If you or others are in immediate danger or experiencing a medical emergency, call 911 immediately.
+        </p>
       </div>
     </div>
   </footer>
 
-  <script>
-    /* Απλό JS για το Mobile Menu */
-    const btn = document.querySelector('.nav-toggle');
-    const header = document.querySelector('.site-header');
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      header.classList.toggle('nav-open');
-    });
-  </script>
+  <!-- Scroll to top -->
+  <button class="to-top" id="toTop" aria-label="Scroll to top">
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <!-- Keep your existing JS exactly as-is -->
+  <script src="script.js"></script>
 </body>
 </html>
