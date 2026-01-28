@@ -2,24 +2,24 @@
   /* 2026 Modern Earth Palette */
   --bg: #FDFCF8; /* Very warm off-white, almost cream */
   --bg-alt: #F4F2ED;
-  
+
   /* The GREEN: Trustworthy, Organic, Deep */
-  --primary: #3A6B58; 
+  --primary: #3A6B58;
   --primary-hover: #2C5243;
   --primary-light: rgba(58, 107, 88, 0.1);
 
   --text: #1C1C1E; /* Soft black */
   --muted: #6C6C75;
-  
+
   --line: rgba(0,0,0,0.08);
   --radius: 12px;
   --radius-lg: 24px;
-  
+
   --shadow: 0 10px 40px -10px rgba(58, 107, 88, 0.15);
-  
+
   --font-sans: "Inter", system-ui, sans-serif;
   --font-serif: "Playfair Display", serif;
-  
+
   --max-width: 1100px;
 }
 
@@ -257,6 +257,88 @@ p { margin-bottom: 1.5rem; }
 .link-green { color: var(--primary); font-weight: 600; border-bottom: 1px solid transparent; }
 .link-green:hover { border-color: var(--primary); }
 
+/* Social Proof */
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 10px;
+}
+.quote-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.quote-text {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 0 0 12px;
+}
+.quote-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+.cred-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--line);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* FAQ */
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+.faq-item {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 18px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  position: relative;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 800;
+  color: var(--primary);
+}
+.faq-item[open] summary::after { content: "–"; }
+.faq-body {
+  padding: 0 18px 18px;
+  color: var(--muted);
+}
+.faq-body p { margin: 0; }
+
 /* Fees / CTA Split */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .fee-row { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 14px 0; }
@@ -285,7 +367,7 @@ p { margin-bottom: 1.5rem; }
 .form-wrapper { max-width: 500px; margin: 0 auto; }
 .modern-form .form-group { margin-bottom: 20px; }
 .modern-form label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--text); }
-.modern-form input, 
+.modern-form input,
 .modern-form textarea {
   width: 100%;
   padding: 12px 16px;
@@ -318,7 +400,7 @@ p { margin-bottom: 1.5rem; }
   .hero-inner, .split-wide, .split, .location-grid { grid-template-columns: 1fr; }
   .header-inner { flex-wrap: wrap; }
   .nav-panel {
-    display: none; width: 100%; flex-direction: column; 
+    display: none; width: 100%; flex-direction: column;
     background: white; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     position: absolute; top: 70px; left: 0; right: 0; border-radius: 0 0 12px 12px;
   }
@@ -328,11 +410,11 @@ p { margin-bottom: 1.5rem; }
   .nav-toggle-lines::before, .nav-toggle-lines::after { content: ""; position: absolute; width: 24px; height: 2px; background: var(--text); left: 0; }
   .nav-toggle-lines::before { top: -8px; }
   .nav-toggle-lines::after { top: 8px; }
-  
+
   .hero-inner { gap: 30px; text-align: center; }
   .hero-actions { justify-content: center; }
   .hero-visual { order: -1; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto; }
   .portrait-frame { transform: rotate(0); }
-  
+
   .foot-col.right { text-align: left; }
 }
