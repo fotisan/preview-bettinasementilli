@@ -1,11 +1,11 @@
 /*
-  Site interactions
+  Site interactions:
   - Mobile nav toggle
-  - Accordion
-  - Scroll to top
+  - Exclusive Accordion (details/summary)
+  - Scroll to top (if needed)
   - Current year
   - Lightweight form validation
-  - Scroll reveal (load on user scroll)
+  - Scroll reveal
 */
 
 (function () {
@@ -20,11 +20,11 @@
   };
 
   ready(() => {
-    // Current year
+    // 1. Current year
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-    // Mobile navigation
+    // 2. Mobile navigation
     const navToggle = document.getElementById("navToggle");
     const navPanel = document.getElementById("navPanel");
 
@@ -53,97 +53,68 @@
       });
     }
 
-    // Accordion
-    document.querySelectorAll("[data-accordion]").forEach((accordion) => {
-      const buttons = Array.from(accordion.querySelectorAll(".acc-item"));
-      buttons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const isExpanded = btn.getAttribute("aria-expanded") === "true";
-
-          // Close all
-          buttons.forEach((b) => {
-            b.setAttribute("aria-expanded", "false");
-            const panel = b.nextElementSibling;
-            if (panel && panel.classList.contains("acc-a")) panel.hidden = true;
+    // 3. Exclusive Accordion (Makes <details> behave like an accordion)
+    const allDetails = document.querySelectorAll("details");
+    allDetails.forEach((targetDetail) => {
+      targetDetail.addEventListener("click", () => {
+        // If we are opening this one, close all others
+        if (!targetDetail.open) {
+          allDetails.forEach((detail) => {
+            if (detail !== targetDetail) {
+              detail.removeAttribute("open");
+            }
           });
-
-          // Open current if it was closed
-          btn.setAttribute("aria-expanded", isExpanded ? "false" : "true");
-          const panel = btn.nextElementSibling;
-          if (panel && panel.classList.contains("acc-a")) panel.hidden = isExpanded;
-        });
+        }
       });
     });
 
-    // Scroll to top
-    const toTop = document.getElementById("toTop");
-    if (toTop) {
-      const setState = () => {
-        if (window.scrollY > 450) toTop.classList.add("show");
-        else toTop.classList.remove("show");
-      };
-
-      window.addEventListener("scroll", setState, { passive: true });
-      setState();
-
-      toTop.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    }
-
-    // Lightweight form validation
+    // 4. Lightweight form validation
     const form = document.getElementById("contactForm");
     if (form) {
-      const markInvalid = (el, isInvalid) => {
-        if (isInvalid) el.classList.add("invalid");
-        else el.classList.remove("invalid");
-      };
-
       form.addEventListener("submit", (e) => {
         const requiredFields = Array.from(form.querySelectorAll("[required]"));
-        let ok = true;
+        let isValid = true;
 
         requiredFields.forEach((field) => {
           const value = (field.value || "").trim();
-          const invalid = value.length === 0;
-          markInvalid(field, invalid);
-          if (invalid) ok = false;
-        });
-
-        if (!ok) e.preventDefault();
-      });
-
-      form.querySelectorAll("input, textarea").forEach((field) => {
-        field.addEventListener("input", () => markInvalid(field, false));
-        field.addEventListener("blur", () => {
-          if (field.hasAttribute("required")) markInvalid(field, (field.value || "").trim().length === 0);
-        });
-      });
-    }
-
-    // Scroll reveal (load on user scroll)
-    const revealEls = Array.from(document.querySelectorAll(".reveal"));
-    if (!revealEls.length) return;
-
-    const show = (el) => el.classList.add("in-view");
-
-    if (!("IntersectionObserver" in window)) {
-      revealEls.forEach(show);
-      return;
-    }
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            show(entry.target);
-            io.unobserve(entry.target);
+          if (value.length === 0) {
+            field.style.borderColor = "#d64545"; // Error color
+            isValid = false;
+          } else {
+            field.style.borderColor = ""; // Reset
           }
         });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
-    );
 
-    revealEls.forEach((el) => io.observe(el));
+        if (!isValid) e.preventDefault();
+      });
+
+      // Clear error on input
+      form.querySelectorAll("input, textarea").forEach((field) => {
+        field.addEventListener("input", () => {
+          field.style.borderColor = "";
+        });
+      });
+    }
+
+    // 5. Scroll reveal (Intersection Observer)
+    const revealEls = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      );
+
+      revealEls.forEach((el) => io.observe(el));
+    } else {
+      // Fallback for very old browsers
+      revealEls.forEach((el) => el.classList.add("in-view"));
+    }
   });
 })();
