@@ -413,7 +413,17 @@ p { margin-bottom: 1.5rem; }
 
   .hero-inner { gap: 30px; text-align: center; }
   .hero-actions { justify-content: center; }
-  .hero-visual { order: -1; margin-bottom: 20px; width: 80%; margin-left: auto; margin-right: auto; }
+
+  /* CHANGE: image comes AFTER CTAs + hero-note on mobile */
+  .hero-visual {
+    order: 2;              /* ensure it stays after .hero-copy */
+    margin-top: 20px;      /* spacing after text */
+    margin-bottom: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .portrait-frame { transform: rotate(0); }
 
   .foot-col.right { text-align: left; }
